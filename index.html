@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <script src="https://aframe.io/releases/0.8.2/aframe.min.js"></script>
+    <script src="//cdn.rawgit.com/donmccurdy/aframe-extras/v5.0.0/dist/aframe-extras.min.js"></script>
+  </head>
+  <body>
+    <a-scene fog="type:linear; color:#354520; far: 50; near:0; density: 0.75;">
+      <!------------------------------------------>
+      <!-- Background music start -->
+      <a-assets>
+        <audio
+          id="background-music"
+          src="https://cdn.glitch.global/cc7d19e3-151f-4045-ba6a-c8e1cca452d7/roots_music_1.mp3?v=1681145840298"
+          autoplay
+          loop
+          preload="auto"
+        ></audio>
+      </a-assets>
+      <!-- Using the a-sound component to play the background music -->
+      <a-sound
+        src="#background-music"
+        autoplay="true"
+        loop="true"
+        volume="1.0"
+      ></a-sound>
+      <!-- Background music end -->
+      <!------------------------------------------>
+      <a-entity
+        camera=""
+        wasd-controls=""
+        position="-4.85206 4.95111 34.38689"
+        rotation=""
+        look-controls=""
+        aframe-injected=""
+        data-aframe-inspector-original-camera=""
+      ></a-entity>
+      <a-entity
+        light="intensity:0.6;castShadow:true"
+        position="-0.18479 1.99065 0.82536"
+        data-aframe-default-light=""
+        aframe-injected=""
+      ></a-entity>
+      <a-sky color="#000000"></a-sky>
+      <a-gltf-model
+        src="https://cdn.glitch.global/cc7d19e3-151f-4045-ba6a-c8e1cca452d7/roots_v6.4.glb?v=1681079954864"
+        position="0 -1.284 -3"
+        rotation="0 100 0"
+        animation-mixer
+      ></a-gltf-model>
+      <a-gltf-model
+        src="https://cdn.glitch.global/cc7d19e3-151f-4045-ba6a-c8e1cca452d7/roots_v6.4.glb?v=1681079954864"
+        position="85.99661 -1.284 -17.82371"
+        rotation="0 100 0"
+        animation-mixer
+      ></a-gltf-model>
+      <a-gltf-model
+        src="https://cdn.glitch.global/cc7d19e3-151f-4045-ba6a-c8e1cca452d7/roots_v6.4.glb?v=1681079954864"
+        position="-89.13526 -1.284 12.38002"
+        rotation="0 100 0"
+        animation-mixer
+      ></a-gltf-model>
+      <a-gltf-model
+        src="https://cdn.glitch.global/cc7d19e3-151f-4045-ba6a-c8e1cca452d7/roots_v6.4.glb?v=1681079954864"
+        position="102.42612 -1.284 72.12857"
+        rotation="0 100 0"
+        animation-mixer
+      ></a-gltf-model>
+      <a-gltf-model
+        src="https://cdn.glitch.global/cc7d19e3-151f-4045-ba6a-c8e1cca452d7/roots_v6.4.glb?v=1681079954864"
+        position="12.0091 -1.284 87.5481"
+        rotation="0 100 0"
+        animation-mixer
+      ></a-gltf-model>
+      <a-gltf-model
+        src="https://cdn.glitch.global/cc7d19e3-151f-4045-ba6a-c8e1cca452d7/roots_v6.4.glb?v=1681079954864"
+        position="-73.45935 -1.284 102.77848"
+        rotation="0 100 0"
+        animation-mixer
+      ></a-gltf-model>
+      <a-plane
+        rotation="-90 0 0"
+        scale="1000 1000 1000"
+        position="0 -1.13048 -2.999"
+        color="#130b0b"
+        material=""
+        geometry=""
+      >
+      </a-plane>
+    </a-scene>
+    <!-- CODE FOR AUDIO LOOP PLAYING start-->
+    <script>
+      // Getting the A-Frame entity with the audio component
+      var soundEntity = document.querySelector("#background-music");
+      // Detecting when the audio has finished playing
+      soundEntity.addEventListener("sound-ended", function (evt) {
+        // Setting the volume (0 to 1) after the loop has started
+        evt.target.getObject3D("sound").volume = 1.0; // Set volume to 100%
+      });
+    </script>
+    <!-- CODE FOR AUDIO LOOP PLAYING end-->
+  </body>
+</html>
